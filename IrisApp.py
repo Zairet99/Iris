@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 st.write(''' # Clasificador de Iris ''')
-st.image("iris.webp", caption="Tipos de flor Iris.")
+st.image("iris.webp", caption="Especies de la flor Iris.")
 
 def user_input_features():
     petal_length = st.slider('Longitud del pétalo:', 1, 7, 3)
@@ -42,4 +42,4 @@ prediction = model.predict(df_input)[0]
 species = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
 
 st.subheader('Predicción')
-st.write(f'**{species[prediction]}**')
+st.write(f'**La especie de flor iris es: {species[prediction]}**')
