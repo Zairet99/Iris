@@ -9,10 +9,10 @@ st.write(''' # Clasificador de flores Iris ''')
 st.image("iris.webp", caption="Especies de la flor Iris.")
 
 def user_input_features():
-    petal_length = st.slider('Longitud del pétalo:', 1, 7, 3)
-    petal_width = st.slider('Ancho del pétalo:', 0, 2, 1)
-    sepal_length = st.slider('Longitud del sépalo:', 4, 8, 5)
-    sepal_width = st.slider('Ancho del sépalo:', 2, 4, 3)
+    petal_length = st.slider('Longitud del pétalo (cm):', 1, 7, 3)
+    petal_width = st.slider('Ancho del pétalo (cm):', 0, 2, 1)
+    sepal_length = st.slider('Longitud del sépalo (cm):', 4, 8, 5)
+    sepal_width = st.slider('Ancho del sépalo (cm):', 2, 4, 3)
     
     return pd.DataFrame([[sepal_length, sepal_width, petal_length, petal_width]], 
                        columns=['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)'])
