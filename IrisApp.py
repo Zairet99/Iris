@@ -5,7 +5,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-st.write(''' # 🌸 Clasificador de Iris ''')
+st.write(''' # Clasificador de Iris ''')
+st.image("iris.webp", caption="Tipos de flor Iris.")
 
 def user_input_features():
     petal_length = st.number_input('Longitud del pétalo (cm):', min_value=1.0, max_value=7.0, value=3.0, step=0.1)
@@ -20,7 +21,7 @@ df = user_input_features()
 
 # Verificar si existe el CSV
 if not os.path.exists('iris_dataset.csv'):
-    st.error('❌ No se encuentra el archivo iris_dataset.csv')
+    st.error('No se encuentra el archivo iris_dataset.csv')
     st.stop()
 
 # Cargar dataset desde CSV
@@ -45,12 +46,12 @@ model.fit(X_train, y_train)
 prediction = model.predict(df)[0]
 species = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
 
-st.subheader('🎯 Predicción')
+st.subheader('Predicción')
 st.write(f'**La flor es:** {species[prediction]}')
 
 # Mostrar probabilidades
 prediction_proba = model.predict_proba(df)
-st.subheader('📊 Probabilidades')
+st.subheader('Probabilidades')
 prob_df = pd.DataFrame({
     'Especie': ['Setosa', 'Versicolor', 'Virginica'],
     'Probabilidad': prediction_proba[0]
@@ -58,4 +59,3 @@ prob_df = pd.DataFrame({
 
 st.bar_chart(prob_df.set_index('Especie'))
 
-print("\n✅ Archivo IrisApp.py creado en Colab")
