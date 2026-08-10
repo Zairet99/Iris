@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 st.write(''' # Clasificador de Iris ''')
-st.image("iris.webp", caption="Tipos de lor Iris.")
+st.image("iris.webp", caption="Tipos de flor Iris.")
 
 def user_input_features():
     petal_length = st.number_input('Longitud del pétalo (cm):', min_value=1, max_value=7, value=3, step=1)
@@ -19,7 +19,7 @@ def user_input_features():
 
 df_input = user_input_features()
 
-# Cargar datos Iris (igual que tu código)
+# Cargar datos Iris 
 iris = load_iris()
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 df['species'] = iris.target
