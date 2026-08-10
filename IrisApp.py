@@ -42,4 +42,4 @@ prediction = model.predict(df_input)[0]
 species = {0: 'Setosa', 1: 'Versicolor', 2: 'Virginica'}
 
 st.subheader('Predicción')
-st.write(f'**La especie de flor iris es: {species[prediction]}**')
+st.write(f'**La especie de flor iris es:  {species[prediction]} **')
