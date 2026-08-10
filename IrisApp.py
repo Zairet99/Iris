@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-st.write(''' # Clasificador de Iris ''')
+st.write(''' # Clasificador de flores Iris ''')
 st.image("iris.webp", caption="Especies de la flor Iris.")
 
 def user_input_features():
